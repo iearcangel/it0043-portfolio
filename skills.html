@@ -1,91 +1,150 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Skills</title>
+    <title>Skills | My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
-    body {
-        background-color: rgb(232, 150, 57);
-        font-family: Arial, sans-serif;
-    }
-</style>
-
-
-    <style>
-        table, th, td {
-            border: 1px solid black;
+        .skills-table {
+            width: 100%;
             border-collapse: collapse;
+            margin: 20px 0 35px;
         }
 
-        th, td {
-            padding: 8px;
+        .skills-table th,
+        .skills-table td {
+            border: 1px solid #333;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .skills-table th {
+            background-color: #800020;
+            color: white;
+        }
+
+        .skills-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .skills-table tr:hover {
+            background-color: #e8e8e8;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
         }
     </style>
-
 </head>
 
 <body>
 
     <header>
-        <h1>My Skills</h1>
+        <h1>My Portfolio</h1>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contacts</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="skills.html">Skills</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
     <main>
-        <section>
-            <h2>Skills and Experience</h2>
+        <section id="skills">
+            <h2>My Skills</h2>
 
-            <table>
-                <caption>My Skills</caption>
+            <p>
+                Here are some of the software tools and creative
+                skills I use in my Multimedia Arts projects.
+            </p>
 
-                <thead>
-                    <tr>
-                        <th scope="col">Skill</th>
-                        <th scope="col">Level</th>
-                        <th scope="col">Experience</th>
-                    </tr>
-                </thead>
+            <h3>Software Proficiency</h3>
 
-                <tbody>
-                    <tr>
-                        <td>Video Editing</td>
-                        <td>Intermediate</td>
-                        <td>4 years</td>
-                    </tr>
+            <div class="table-container">
+                <table class="skills-table">
+                    <thead>
+                        <tr>
+                            <th>Software</th>
+                            <th>Proficiency</th>
+                        </tr>
+                    </thead>
 
-                    <tr>
-                        <td>Photography</td>
-                        <td>Intermediate</td>
-                        <td>4 years</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Adobe Photoshop</td>
+                            <td>Proficient</td>
+                        </tr>
+                        <tr>
+                            <td>Adobe Premiere Pro</td>
+                            <td>Proficient</td>
+                        </tr>
+                        <tr>
+                            <td>CapCut</td>
+                            <td>Proficient</td>
+                        </tr>
+                        <tr>
+                            <td>Canva</td>
+                            <td>Proficient</td>
+                        </tr>
+                        <tr>
+                            <td>IbisPaint X</td>
+                            <td>Proficient</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                    <tr>
-                        <td>Graphic Design</td>
-                        <td>Intermediate</td>
-                        <td>3 years</td>
-                    </tr>
+            <h3>Creative Skills</h3>
 
-                    <tr>
-                        <td>Writing</td>
-                        <td>Intermediate</td>
-                        <td>4 years</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table class="skills-table">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Graphic Design</td>
+                            <td>Creating visual materials and layouts</td>
+                        </tr>
+                        <tr>
+                            <td>Video Editing</td>
+                            <td>Editing footage, transitions, and audio</td>
+                        </tr>
+                        <tr>
+                            <td>Visual Storytelling</td>
+                            <td>Communicating ideas through visuals</td>
+                        </tr>
+                        <tr>
+                            <td>Digital Illustration</td>
+                            <td>Creating digital artwork and illustrations</td>
+                        </tr>
+                        <tr>
+                            <td>Photography</td>
+                            <td>Capturing and composing images</td>
+                        </tr>
+                        <tr>
+                            <td>Filmmaking</td>
+                            <td>Developing and producing film projects</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 My Portfolio</p>
+        <p>&copy; 2026 My Portfolio. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
+```

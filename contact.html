@@ -3,23 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contact Me | My Portfolio</title>
-
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 
     <style>
         .contact-container {
             max-width: 650px;
             margin: 40px auto;
-        }
-
-        .contact-container h2 {
-            margin-bottom: 10px;
-        }
-
-        .contact-form {
-            margin-top: 25px;
+            padding: 20px;
         }
 
         .form-group {
@@ -43,15 +35,21 @@
             box-sizing: border-box;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: 2px solid #800020;
-            border-color: #800020;
-        }
-
         .form-group textarea {
             min-height: 150px;
             resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: 2px solid #800020;
+        }
+
+        .error-message {
+            display: block;
+            color: #b00020;
+            font-size: 14px;
+            margin-top: 5px;
         }
 
         .send-button {
@@ -64,13 +62,13 @@
             cursor: pointer;
         }
 
-        .send-button:hover {
-            background-color: #a00030;
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
-        .contact-note {
+        .form-status {
             margin-top: 15px;
-            font-size: 14px;
         }
     </style>
 </head>
@@ -80,7 +78,16 @@
     <header>
         <h1>My Portfolio</h1>
 
-        <nav class="navbar">
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
+            Menu
+        </button>
+
+        <nav class="navbar" id="main-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="skills.html">Skills</a>
@@ -90,89 +97,76 @@
 
     <main>
         <section class="contact-container">
-
             <h2>Contact Me</h2>
 
             <p>
                 Have a question or want to work together?
-                Feel free to send me a message using the form below.
+                Send me a message using the form below.
             </p>
 
-            <form
-                class="contact-form"
-                action="https://formsubmit.co/YOUR_EMAIL@example.com"
-                method="POST"
-            >
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="New Message from My Portfolio"
-                >
-
-                <input
-                    type="hidden"
-                    name="_template"
-                    value="table"
-                >
-
+            <form id="contact-form" novalidate>
                 <div class="form-group">
                     <label for="name">Full Name</label>
-
                     <input
                         type="text"
                         id="name"
                         name="name"
                         placeholder="Enter your full name"
                         required
+                        aria-describedby="name-error"
                     >
+                    <span class="error-message" id="name-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-
                     <input
                         type="email"
                         id="email"
                         name="email"
                         placeholder="Enter your email address"
                         required
+                        aria-describedby="email-error"
                     >
+                    <span class="error-message" id="email-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="subject">Subject</label>
-
                     <input
                         type="text"
                         id="subject"
                         name="subject"
                         placeholder="What is your message about?"
                         required
+                        aria-describedby="subject-error"
                     >
+                    <span class="error-message" id="subject-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Your Message</label>
-
                     <textarea
                         id="message"
                         name="message"
                         placeholder="Type your message here..."
                         required
+                        aria-describedby="message-error"
                     ></textarea>
+                    <span class="error-message" id="message-error"></span>
                 </div>
 
                 <button type="submit" class="send-button">
                     Send Message
                 </button>
 
+                <p
+                    class="form-status"
+                    id="form-status"
+                    role="status"
+                    aria-live="polite"
+                ></p>
             </form>
-
-            <p class="contact-note">
-                You can also contact me directly through email.
-            </p>
-
         </section>
     </main>
 
@@ -182,4 +176,3 @@
 
 </body>
 </html>
-```

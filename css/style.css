@@ -489,3 +489,26 @@
   }
 
  }
+ /* Feature 1: Navigation Toggle */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 16px;
+        cursor: pointer;
+    }
+
+    .navbar:not(.is-open) {
+        display: none;
+    }
+
+    .navbar.is-open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

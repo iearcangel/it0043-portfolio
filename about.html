@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | My Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -12,7 +13,16 @@
     <header>
         <h1>My Portfolio</h1>
 
-        <nav class="navbar">
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-nav"
+        >
+            Menu
+        </button>
+
+        <nav class="navbar" id="main-nav">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="skills.html">Skills</a>
@@ -50,4 +60,3 @@
 
 </body>
 </html>
-```

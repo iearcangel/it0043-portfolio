@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,71 +7,6 @@
     <title>Contact Me | My Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
-
-    <style>
-        .contact-container {
-            max-width: 650px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #999;
-            border-radius: 4px;
-            font-family: Helvetica, Arial, sans-serif;
-            font-size: 15px;
-            box-sizing: border-box;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: 2px solid #800020;
-        }
-
-        .error-message {
-            display: block;
-            color: #b00020;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .send-button {
-            background-color: #800020;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .send-button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .form-status {
-            margin-top: 15px;
-        }
-    </style>
 </head>
 
 <body>
@@ -104,9 +40,12 @@
                 Send me a message using the form below.
             </p>
 
-            <form id="contact-form" novalidate>
+            <!-- novalidate REMOVED so browser validation works -->
+            <form id="contact-form">
+
                 <div class="form-group">
                     <label for="name">Full Name</label>
+
                     <input
                         type="text"
                         id="name"
@@ -115,11 +54,13 @@
                         required
                         aria-describedby="name-error"
                     >
+
                     <span class="error-message" id="name-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
+
                     <input
                         type="email"
                         id="email"
@@ -128,11 +69,13 @@
                         required
                         aria-describedby="email-error"
                     >
+
                     <span class="error-message" id="email-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="subject">Subject</label>
+
                     <input
                         type="text"
                         id="subject"
@@ -141,11 +84,13 @@
                         required
                         aria-describedby="subject-error"
                     >
+
                     <span class="error-message" id="subject-error"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Your Message</label>
+
                     <textarea
                         id="message"
                         name="message"
@@ -153,6 +98,7 @@
                         required
                         aria-describedby="message-error"
                     ></textarea>
+
                     <span class="error-message" id="message-error"></span>
                 </div>
 
@@ -166,6 +112,7 @@
                     role="status"
                     aria-live="polite"
                 ></p>
+
             </form>
         </section>
     </main>
